@@ -82,10 +82,13 @@ def save_data(num_list, sel_data):
     result2 = list(set(num2).difference(set(num_list)))
     result3 = list(set(num3).difference(set(num_list)))
 
-    value_list = [0 for x in range(len(result1))]
-    extra_data1 = dict(zip(result1, value_list))
-    extra_data2 = dict(zip(result2, value_list))
-    extra_data3 = dict(zip(result3, value_list))
+    value_list1 = [0 for x in range(len(result1))]
+    value_list2 = [0 for x in range(len(result2))]
+    value_list3 = [0 for x in range(len(result3))]
+
+    extra_data1 = dict(zip(result1, value_list1))
+    extra_data2 = dict(zip(result2, value_list2))
+    extra_data3 = dict(zip(result3, value_list3))
 
     # 没有的数据
     final_data.update(sel_data)
@@ -121,7 +124,7 @@ def save_data(num_list, sel_data):
     df['在跟群编码'] = num_list
     df['总计'] = length
     df['冯茹燕'] = fry_list
-    df['刘晓莉'] = lxl_list
+    df['刘晓丽'] = lxl_list
     df['韩会会'] = hhh_list
     writer = pd.ExcelWriter('.\data' + '.xlsx')
     df.to_excel(writer, index=False)
